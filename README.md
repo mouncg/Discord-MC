@@ -2,7 +2,7 @@
 A simple script made to link Minecraft and Discord servers.
 ## Getting Started
 ### Compatibility
-Latest Nodejs
+Latest Version of Nodejs
 ### Installing
 > Clone the Project
 ```
