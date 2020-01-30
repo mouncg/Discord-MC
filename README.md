@@ -3,6 +3,8 @@ A simple script made to link Minecraft and Discord servers.
 ## Getting Started
 ### Compatibility
 Latest Version of Nodejs
+Latest Version of Minelfayer
+Minecraft version 1.12.2 and below
 ### Installing
 > Clone the Project
 ```
