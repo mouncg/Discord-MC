@@ -13,8 +13,7 @@ git clone https://github.com/TotherMeteor/Discord-MC.git
 npm install discordjs
 npm install mineflayer
 ```
-> Config
-Add your login credentials to the config.js
+> Add your login credentials to the config.js
 ### Starting the script
 ```js
 nodejs index.js
