@@ -80,6 +80,7 @@ bot.on('chat', (username, message) => {
 client.on('message', (message) => {
 
     var args = message.content.slice(' ');
+    if (message.author.bot) return;
 
     //If message is in the desired channel then send to the server
     if (message.channel.id == channel) {
