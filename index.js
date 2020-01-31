@@ -68,7 +68,7 @@ bot.on('chat', (player, message) => {
             if (err)
                 console.log(err);
             else
-                players[player] = { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 }
+                players = { player: { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 } }
                 fs.writeFile('./players.json', JSON.stringify(client.players, null, 4));
         });
         
