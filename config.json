@@ -1,7 +1,8 @@
 {
-    "ip": "",
-    "port": "",
-    "email": "",
-    "token": "",
-    "password": ""
+  "ip": "",
+  "port": "",
+  "email": "",
+  "token": "",
+  "channel":  "",
+  "password": ""
 }
