@@ -15,11 +15,7 @@ npm install discordjs
 npm install mineflayer
 ```
 ### Configuration
-> Add your minecraft account credentials in the config file.
-> Add your discord bot token.
-> Add the desired discord channel's ID.
-> Add the server IP & port.
-> Set a prefix (or use default)
+> Fill out the keys in the config.json, make sure for channel you put the channel ID.
 ### Starting the script
 ```js
 nodejs index.js
