@@ -62,12 +62,12 @@ bot.on('chat', (player, message) => {
     var date = new Date();
     date.setMonth(0);
 
-    if (client.players[player]) {
+    if (!players[player]) {
         MojangAPI.uuidAt(player, date, function (err, res) {
             if (err)
                 console.log(err);
             else
-                config[players] = { player: { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 } }
+                players[player] = { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 } }
                 fs.writeFile('./players.json', JSON.stringify(client.players, null, 4));
         });
         
