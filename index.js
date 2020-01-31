@@ -34,6 +34,7 @@ client.on('ready', () => {
 
     //Sends a message once the bot loads
     console.log('Successfully loaded...');
+    console.log(channel);
 
 });
 
