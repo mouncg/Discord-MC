@@ -68,8 +68,8 @@ bot.on('chat', (username, message) => {
             if (err)
                 console.log(err);
             else
-                players = { username: { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 } }
-                fs.writeFile('./players.json', JSON.stringify(client.players, null, 4));
+                //players = { username: { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 } }
+                //fs.writeFile('./players.json', JSON.stringify(client.players, null, 4));
         });
         
     };
