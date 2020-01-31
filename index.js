@@ -33,7 +33,7 @@ const bot = mineflayer.createBot({
 client.on('ready', () => {
 
     //Sends a message once the bot loads
-    //console.log('Successfully loaded...');
+    console.log('Successfully loaded...');
     console.log(channel);
 
 });
@@ -43,7 +43,7 @@ bot.on('login', () => {
 
     //Sends a message once the minecraft bot logs into a minecraft server
     console.log(`Connected to ${ip}:${port}`);
-    client.channels.get(channel).send(`Connected to ${ip}: ${port}`);
+    //client.channels.get(channel).send(`Connected to ${ip}: ${port}`);
 
 });
 
