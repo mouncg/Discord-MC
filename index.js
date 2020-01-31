@@ -71,7 +71,26 @@ client.on('message', (message) => {
         return
     };
 
+    if (args[0] == prefix + 'stats') {
+        if (!args[1]) return message.reply('Please give me a player name!');
+
+        if (client.players[args[1]]) {
+            message.channel.send({
+                embed: {
+                    color: 0x00ffff,
+                    title: `Stats for ${username}`,
+                    description: 'Coming Soon!'
+                }
+            });
+
+        } else {
+            message.reply('Please name a valid player!');
+        };
+        
+    };
+
 });
+
 
 client.login(token);
 
