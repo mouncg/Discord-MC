@@ -5,15 +5,17 @@ const client = new Discord.Client({ disableEveryone: true })
 const fs = require('fs');
 const config = require('./config.json');
 const players = require('./players.json');
+var MojangAPI = require('mojang-api');
+
 
 //Global Variables
-var token = config['token'];
-var channel = config['channel'];
-var ip = config['ip'];
-var port = config['port'];
-var prefix = config['prefix']
-var user = config['email'];
-var pw = config['password'];
+var token = client.config['token'];
+var channel = client.config['channel'];
+var ip = client.config['ip'];
+var port = client.config['port'];
+var prefix = client.config['prefix'];
+var user = client.config['email'];
+var pw = client.config['password'];
 
 
 //Creates the minecraft bot & logs into the server
@@ -33,7 +35,7 @@ client.on('ready', () => {
     //Sends a message once the bot loads
     console.log('Successfully loaded...');
 
-})
+});
 
 
 bot.on('login', () => {
@@ -55,6 +57,21 @@ bot.on('chat', (player, message) => {
             description: message
         }
     });
+
+    //This will ensure that all players are saved into the json if not already
+    var date = new Date();
+    date.setMonth(0);
+
+    if (client.players[player]) {
+        MojangAPI.uuidAt(player, date, function (err, res) {
+            if (err)
+                console.log(err);
+            else
+                client.config[players] = { player: { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 } }
+                fs.writeFile('./players.json', JSON.stringify(client.players, null, 4));
+        });
+        
+    };
 
 });
 
