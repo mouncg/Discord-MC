@@ -11,6 +11,7 @@ var token = config['token'];
 var channel = config['channel'];
 var ip = config['ip'];
 var port = config['port'];
+var prefix = config['prefix']
 var user = config['email'];
 var pw = config['password'];
 
@@ -46,7 +47,7 @@ bot.on('login', () => {
 
 bot.on('chat', (player, message) => {
 
-    //This will send a message to the discord when a player chats
+    //This will send an embed to the discord when a player chats
     client.channels.get(channel).send({
         embed: {
             color: 0x00ffff, //You may change this to whatever hex, but make sure you replace "#" with "0x"
@@ -57,7 +58,11 @@ bot.on('chat', (player, message) => {
 
 });
 
+client.on('message', (message) => {
 
+    var prefix = config['prefix']
+
+})
 
 client.login(token);
 

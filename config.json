@@ -2,6 +2,7 @@
   "ip": "",
   "port": "",
   "email": "",
+  "prefix": "",
   "token": "",
   "channel":  "",
   "password": ""
