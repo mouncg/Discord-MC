@@ -8,7 +8,7 @@ const players = require('./players.json');
 
 //Global Variables
 var token = config['token'];
-var channel = config['channel']
+var channel = config['channel'];
 var ip = config['ip'];
 var port = config['port'];
 var user = config['email'];
@@ -22,23 +22,27 @@ const bot = mineflayer.createBot({
     port: port,
     username: user,
     password: pw,
-    version :'1.12.2' //You can leave blank to auto-detect, but it only supports 1.12.2 and lower
+    version: '1.12.2' //You can leave blank to auto-detect, but it only supports 1.12.2 and lower
 
-})
+});
 
-//Sends a message once the bot loads correctly
+
 client.on('ready', () => {
 
-    console.log('Successfully loaded...')
+    //Sends a message once the bot loads correctly
+    console.log('Successfully loaded...');
 
 })
 
-//Sends a message once the minecraft bot logs into a minecraft server
+
 bot.on('login', () => {
 
+    //Sends a message once the minecraft bot logs into a minecraft server
+    console.log(`Connected to ${ip}:${port}`);
+    client.channels.get(channel).send(`Connected to ${ip}: ${port}`);
+
+});
 
 
-})
-
-client.login(token)
+client.login(token);
 
