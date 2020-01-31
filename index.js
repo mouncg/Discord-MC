@@ -1,5 +1,5 @@
 //Import files & packages
-const discord = require('discord.js');
+const Discord = require('discord.js');
 const mineflayer = require('mineflayer');
 const client = new Discord.Client({ disableEveryone: true })
 const fs = require('fs');
