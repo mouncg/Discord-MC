@@ -44,5 +44,20 @@ bot.on('login', () => {
 });
 
 
+bot.on('chat', (player, message) => {
+
+    //This will send a message to the discord when a player chats
+    client.channels.get(channel).send({
+        embed: {
+            color: 0x00ffff, //You may change this to whatever hex, but make sure you replace "#" with "0x"
+            title: playername,
+            description: message
+        }
+    });
+
+});
+
+
+
 client.login(token);
 
