@@ -83,7 +83,7 @@ client.on('message', (message) => {
     //If message is in the desired channel then send to the server
     if (message.channel.id == channel) {
         message.delete();
-        bot.chat(`[${message.auhtor.tag}] ${message}`)
+        bot.chat(`[${message.author.tag}] ${message}`)
     } else {
         //If the message is not in the desired channel, then ignore it
         return
