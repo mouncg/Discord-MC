@@ -10,12 +10,12 @@ var MojangAPI = require('mojang-api');
 
 //Global Variables
 var token = config['token'];
-var channel = client.config['channel'];
-var ip = client.config['ip'];
-var port = client.config['port'];
-var prefix = client.config['prefix'];
-var user = client.config['email'];
-var pw = client.config['password'];
+var channel = config['channel'];
+var ip = config['ip'];
+var port = config['port'];
+var prefix = config['prefix'];
+var user = config['email'];
+var pw = config['password'];
 
 
 //Creates the minecraft bot & logs into the server
@@ -67,7 +67,7 @@ bot.on('chat', (player, message) => {
             if (err)
                 console.log(err);
             else
-                client.config[players] = { player: { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 } }
+                config[players] = { player: { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 } }
                 fs.writeFile('./players.json', JSON.stringify(client.players, null, 4));
         });
         
