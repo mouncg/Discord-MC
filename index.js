@@ -63,8 +63,8 @@ bot.on('chat', (username, message) => {
     var date = new Date();
     date.setMonth(0);
 
-    if (!players[player]) {
-        MojangAPI.uuidAt(player, date, function (err, res) {
+    if (!players[username]) {
+        MojangAPI.uuidAt(username, date, function (err, res) {
             if (err)
                 console.log(err);
             else
