@@ -9,7 +9,7 @@ var MojangAPI = require('mojang-api');
 
 
 //Global Variables
-var token = client.config['token'];
+var token = config['token'];
 var channel = client.config['channel'];
 var ip = client.config['ip'];
 var port = client.config['port'];
