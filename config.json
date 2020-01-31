@@ -1,9 +1,9 @@
 {
-  "ip": "",
-  "port": "",
-  "email": "",
-  "prefix": "",
-  "token": "",
-  "channel":  "",
-  "password": ""
+  "ip": "example.ip",
+  "port": "25565",
+  "email": "user@example.com",
+  "prefix": ".",
+  "token": "your_token",
+  "channel":  "channel_id",
+  "password": "your_password"
 }

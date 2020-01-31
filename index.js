@@ -30,7 +30,7 @@ const bot = mineflayer.createBot({
 
 client.on('ready', () => {
 
-    //Sends a message once the bot loads correctly
+    //Sends a message once the bot loads
     console.log('Successfully loaded...');
 
 })
@@ -60,7 +60,6 @@ bot.on('chat', (player, message) => {
 
 client.on('message', (message) => {
 
-    //This splits the message up into arguments
     var args = message.content.slice(' ');
 
     //If message is in the desired channel then send to the server
