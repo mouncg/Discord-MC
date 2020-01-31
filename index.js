@@ -60,7 +60,17 @@ bot.on('chat', (player, message) => {
 
 client.on('message', (message) => {
 
-    var prefix = config['prefix']
+    //This splits the message up into arguments
+    var args = message.content.slice(' ')
+
+    //If message is in the desired channel then send to the server
+    if (message.channel.id == channel) {
+        message.delete();
+        bot.chat(`[${message.auhtor.tag}] ${message}`)
+    } else {
+        //If the message is not in the desired channel, then ignore it
+        return
+    }
 
 })
 
