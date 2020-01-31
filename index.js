@@ -61,7 +61,7 @@ bot.on('chat', (player, message) => {
 client.on('message', (message) => {
 
     //This splits the message up into arguments
-    var args = message.content.slice(' ')
+    var args = message.content.slice(' ');
 
     //If message is in the desired channel then send to the server
     if (message.channel.id == channel) {
@@ -70,9 +70,9 @@ client.on('message', (message) => {
     } else {
         //If the message is not in the desired channel, then ignore it
         return
-    }
+    };
 
-})
+});
 
 client.login(token);
 
