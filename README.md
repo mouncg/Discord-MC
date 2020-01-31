@@ -14,7 +14,12 @@ git clone https://github.com/TotherMeteor/Discord-MC.git
 npm install discordjs
 npm install mineflayer
 ```
-> Add your login credentials to the config.js
+#Configuration
+> Add your minecraft account credentials in the config file.
+> Add your discord bot token.
+> Add the desired discord channel's ID.
+> Add the server IP & port.
+> Set a prefix (or use default)
 ### Starting the script
 ```js
 nodejs index.js
