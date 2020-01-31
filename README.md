@@ -13,8 +13,10 @@ git clone https://github.com/TotherMeteor/Discord-MC.git
 ```js
 npm install discordjs
 npm install mineflayer
+npm install --save mojang-api
 ```
-> Add your login credentials to the config.js
+### Configuration
+> Fill out the keys in the config.json, make sure for channel you put the channel ID.
 ### Starting the script
 ```js
 nodejs index.js
