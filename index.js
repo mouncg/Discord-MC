@@ -54,7 +54,7 @@ bot.on('chat', (player, message) => {
     client.channels.get(channel).send({
         embed: {
             color: 0x00ffff, //You may change this to whatever hex, but make sure you replace "#" with "0x"
-            title: playername,
+            title: player,
             description: message
         }
     });
