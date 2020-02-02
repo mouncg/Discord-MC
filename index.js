@@ -82,7 +82,7 @@ client.on('message', (message) => {
 
     var args = message.content.split(' ');
     if (message.author.bot) return;
-    var cmd = message.content.slice(args[0].length);
+    var cmd = message.content.slice(args[0].length +1);
 
     //This will allow you to run commands via the bot and/or chat as the bot
     if (args[0] == prefix + 'say') {
@@ -90,7 +90,7 @@ client.on('message', (message) => {
             message.reply('You do not have permission to run this.')
         } else {
             bot.chat(cmd)
-            message.reply(`Successfully send \`${cmd}\` to the chat.`)
+            message.reply(`Successfully sent \`${cmd}\` to the chat.`)
         };
     };
 
