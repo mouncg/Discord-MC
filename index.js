@@ -82,14 +82,15 @@ client.on('message', (message) => {
 
     var args = message.content.split(' ');
     if (message.author.bot) return;
-    var cmd = message.content.slice(args[0].length)
+    var cmd = message.content.slice(args[0].length);
 
     //This will allow you to run commands via the bot and/or chat as the bot
-    if (args[0] == prefix + 'run') {
+    if (args[0] == prefix + 'say') {
         if (message.author.id != owner) {
-            return
+            message.reply('You do not have permission to run this.')
         } else {
             bot.chat(cmd)
+            message.reply(`Successfully send \`${cmd}\` to the chat.`)
         };
     };
 
@@ -98,7 +99,6 @@ client.on('message', (message) => {
         message.delete();
         bot.chat(`[${message.author.tag}] ${message}`)
     } else {
-        //If the message is not in the desired channel, then ignore it
         return
     };
 
