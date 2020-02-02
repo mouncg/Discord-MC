@@ -16,6 +16,7 @@ var port = config['port'];
 var prefix = config['prefix'];
 var user = config['email'];
 var pw = config['password'];
+var owner = config['owner_id'];
 
 
 //Creates the minecraft bot & logs into the server
@@ -63,13 +64,13 @@ bot.on('chat', (username, message) => {
     var date = new Date();
     date.setMonth(0);
 
-    if (!players[username]) {
+    if (!players[str(username)]) {
         MojangAPI.uuidAt(username, date, function (err, res) {
             if (err)
                 console.log(err);
             else
                 return
-                players[username] = { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 };
+                players[str(username)] = { uuid: res.id, joins: 1, leaves: 0, kills: 0, deaths: 0 };
                 fs.writeFile('./players.json', JSON.stringify(client.players, null, 4));
         });
         
@@ -79,8 +80,18 @@ bot.on('chat', (username, message) => {
 
 client.on('message', (message) => {
 
-    var args = message.content.slice(' ');
+    var args = message.content.split(' ');
     if (message.author.bot) return;
+    var cmd = message.content.slice(args[0].length)
+
+    //This will allow you to run commands via the bot and/or chat as the bot
+    if (args[0] == prefix + 'run') {
+        if (message.author.id != owner) {
+            return
+        } else {
+            bot.chat(cmd)
+        };
+    };
 
     //If message is in the desired channel then send to the server
     if (message.channel.id == channel) {

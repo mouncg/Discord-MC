@@ -5,5 +5,6 @@
   "prefix": ".",
   "token": "your_token",
   "channel":  "channel_id",
-  "password": "your_password"
+  "password": "your_password",
+  "owner_id":  "your_id"
 }
