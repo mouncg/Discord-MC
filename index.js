@@ -33,7 +33,6 @@ const bot = mineflayer.createBot({
 
 client.on('ready', () => {
 
-    //Sends a message once the bot loads
     console.log('Successfully loaded...');
     console.log(channel);
 
@@ -42,16 +41,14 @@ client.on('ready', () => {
 
 bot.on('login', () => {
 
-    //Sends a message once the minecraft bot logs into a minecraft server
     console.log(`Connected to ${ip}:${port}`);
-    //client.channels.get(channel).send(`Connected to ${ip}: ${port}`);
+    //client.channels.get(channel).send(`Connected to ${ip}: ${port}`); (not working for some reason)
 
 });
 
 
 bot.on('chat', (username, message) => {
 
-    //This will send an embed to the discord when a player chats
     client.channels.get(channel).send({
         embed: {
             color: 0x00ffff, //You may change this to whatever hex, but make sure you replace "#" with "0x"
@@ -61,6 +58,7 @@ bot.on('chat', (username, message) => {
     });
 
     //This will ensure that all players are saved into the json if not already
+    //This isn't working at the moment, I'll fix when I can
     var date = new Date();
     date.setMonth(0);
 
@@ -84,7 +82,6 @@ client.on('message', (message) => {
     if (message.author.bot) return;
     var cmd = message.content.slice(args[0].length +1);
 
-    //This will allow you to run commands via the bot and/or chat as the bot
     if (args[0] == prefix + 'say') {
         if (message.author.id != owner) {
             message.reply('You do not have permission to run this.')
@@ -94,7 +91,6 @@ client.on('message', (message) => {
         };
     };
 
-    //If message is in the desired channel then send to the server
     if (message.channel.id == channel) {
         message.delete();
         bot.chat(`[${message.author.tag}] ${message}`)
