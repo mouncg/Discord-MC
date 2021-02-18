@@ -11,16 +11,13 @@ git clone https://github.com/TotherMeteor/Discord-MC.git
 ```
 > Packages
 ```js
-npm install discordjs
-npm install mineflayer
-npm install --save mojang-api
+npm install
 ```
 ### Configuration
-> Fill out the keys in the config.json, make sure for channel you put the channel ID.
+> Fill out the configurations in the config.json, make sure for channel you put the channel ID.
 ### Starting the script
 ```js
-nodejs index.js
+node .
 ```
 ## License
-This project is licensed with the MIT license - see [`LICENSE`](https://github.com/TotherMeteor/Discord-MC/blob/master/LICENSE) file for details
-
+This project is licensed under the MIT license - see [`LICENSE`](https://github.com/TotherMeteor/Discord-MC/blob/master/LICENSE) file for details.
